@@ -1,0 +1,97 @@
+/* import fonts from css file */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+ background-color:#222; 
+ display:flex;
+ flex-direction:column;
+ align-items: center;
+ justify-content: center;
+ } 
+
+/* container */
+.container{
+    max-width:35rem;
+    height:100vh;
+    background:linear-gradient(to bottom right, #5aafee  0%, #5aafee 40%, #2e7cc3 50%, #2e7cc3 100%);
+    z-index:100;
+    border-radius: 25px;;
+    margin-top: 2rem;
+    padding:0 3rem 0 3rem;
+}
+.search-container{
+    padding-top:4rem;
+    display:flex;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+}
+.search-container--input-form{
+    width:30rem;
+}
+.input-form{
+    border-radius: 25px;
+    height:1rem;
+    background-color: #fff;
+    width:100%;
+    border:none;
+    outline:none;
+    padding:2rem;
+}
+.search-container--input-btn{
+  border-radius:100%;
+  background-color: #fff;
+  height:4rem;
+  width:4rem;
+  border:none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+.search-container--input-btn .search-icon{
+  color:#000;
+  height: 2rem;
+  width: 2rem;
+}
+.weather-illustration-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    font-size: 3rem;
+}
+.weather-illustration-container-image img{
+    cursor:default;
+}
+/* weather details */
+.weather-details{
+    padding-top:4rem;
+    display:flex;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+}
+.weather-details__condition{
+ display: flex;
+ gap:10px;
+
+}
+.weather-details__condition img{
+    width:4rem;
+}
+.weather-details__condition__number{
+    font-size:2rem;
+}
+.weather-details__condition__type{
+   font-size: 1.3rem;;
+}

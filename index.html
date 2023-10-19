@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <div class="search-container--input-form">
+          <input type="text" class="input-form" placeholder="enter city name" />
+        </div>
+        <div>
+          <button class="search-container--input-btn" type="submit">
+            <ion-icon class="search-icon" name="search"></ion-icon>
+          </button>
+        </div>
+      </div>
+      <div class="weather-illustration-container">
+        <img
+          class="weather-illustration-container-image"
+          src="img/rain.png"
+          alt=""
+        />
+        <h1 class="temp">22°</h1>
+        <h2 class="city">New York</h2>
+      </div>
+      <div class="weather-details">
+        <div class="weather-details__condition">
+          <div><img src="img/humidity.png" alt="" /></div>
+          <div>
+            <p class="humidity weather-details__condition__number">48%</p>
+            <p class="weather-details__condition__type">Humidity</p>
+          </div>
+        </div>
+        <div class="weather-details__condition">
+          <div><img src="img/wind.png" alt="" /></div>
+          <div>
+            <p class="windspeed weather-details__condition__number">10.28 km/h</p>
+            <p class="weather-details__condition__type">windspeed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
