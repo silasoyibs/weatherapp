@@ -7,8 +7,8 @@ const windSpeed = document.querySelector(".windspeed");
 const humidityPercentage = document.querySelector(".humidity");
 const  weatherTypeimg = document.querySelector(".weather-illustration-container-image");
 // resetting values
-weatherTemp.innerHTML = "--- ";
-countryCity.innerHTML = "--- ";
+weatherTemp.innerHTML = "---";
+countryCity.innerHTML = "---";
 windSpeed.innerHTML = "---";
 humidityPercentage.innerHTML="---"
 // Functions
@@ -33,8 +33,24 @@ function settingImage(weatherObj, weatherTypeimg){
     weatherTypeimg.src="img/clear.png"
   }
 }
-
-
+// get position
+let latitude 
+let longitude
+  function getLocation() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+         latitude = position.coords.latitude;
+         longitude = position.coords.longitude;
+         getWeatherSearch()
+      }, function (error) {
+        console.error("Error getting geolocation:", error);
+      });
+    } else {
+      console.error("Geolocation is not supported in this browser.");
+    }
+  }
+  getLocation();
+ 
 // click Event
 let country = 'Abuja';
 const apiKey = "3c6792811bf7f8cddf25779aa975ee61";
@@ -72,18 +88,15 @@ function searchBtnClick() {
   getWeatherSearch();
 }
 // Default setting
-
   async function getWeatherSearch() {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${apiKey}`
-      );
-      console.log(response);
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3c6792811bf7f8cddf25779aa975ee61&lang={lang}`
+        );
       if (!response.ok) {
         throw new Error("city not found");
       }
       const weatherData = await response.json();
-      console.log(weatherData);
       const weatherObj = {
         city: weatherData.name,
         temp: weatherData.main.temp,
@@ -95,10 +108,9 @@ function searchBtnClick() {
       reset(weatherTemp,countryCity, windSpeed,humidityPercentage,weatherObj);
       // setting image
       settingImage(weatherObj, weatherTypeimg);
-      // make input search empty
-      searchInput.value = "";
     } catch (error) {
       console.log(error);
     }
   }
-  getWeatherSearch();
+
+  
