@@ -6,6 +6,12 @@ const countryCity = document.querySelector(".city");
 const windSpeed = document.querySelector(".windspeed");
 const humidityPercentage = document.querySelector(".humidity");
 const  weatherTypeimg = document.querySelector(".weather-illustration-container-image");
+const  closeErrMessage = document.querySelector(".close-message-container");
+const  closeErrorBtn = document.querySelector(".close-icon");
+
+closeErrorBtn.addEventListener("click",()=>{
+  closeErrMessage.style.display="none"
+})
 // resetting values
 weatherTemp.innerHTML = "---";
 countryCity.innerHTML = "---";
@@ -82,7 +88,8 @@ function searchBtnClick() {
       // make input search empty
       searchInput.value = "";
     } catch (error) {
-      console.log(error);
+      closeErrMessage.style.display = "block";
+      searchInput.value = "";
     }
   }
   getWeatherSearch();

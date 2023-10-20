@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <div class="container">
@@ -19,6 +19,12 @@
           </button>
         </div>
       </div>
+      <!-- Error message container -->
+      <div  id="error-container" class="close-message-container">
+        <ion-icon  class="close-icon"name="close"></ion-icon>
+        <p id="error-message" class="error-message">City not found. Please enter a valid city.</p>
+      </div>
+
       <div class="weather-illustration-container">
         <img
           class="weather-illustration-container-image"
@@ -45,7 +51,6 @@
         </div>
       </div>
     </div>
-
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="js/script.js"></script>
 
