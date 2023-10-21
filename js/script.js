@@ -77,7 +77,7 @@ function searchBtnClick() {
       console.log(weatherData);
       const weatherObj = {
         city: weatherData.name,
-        temp: weatherData.main.temp,
+        temp: Number(weatherData.main.temp)-273,
         humidity: weatherData.main.humidity,
         windSpeed: weatherData.wind.speed,
         weatherType: weatherData.weather[0].main,
@@ -97,6 +97,7 @@ function searchBtnClick() {
 // Default setting
   async function getWeatherSearch() {
     try {
+      console.log(latitude,longitude);
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3c6792811bf7f8cddf25779aa975ee61&lang={lang}`
         );
@@ -106,7 +107,7 @@ function searchBtnClick() {
       const weatherData = await response.json();
       const weatherObj = {
         city: weatherData.name,
-        temp: weatherData.main.temp,
+        temp:Number(weatherData.main.temp)-273,
         humidity: weatherData.main.humidity,
         windSpeed: weatherData.wind.speed,
         weatherType: weatherData.weather[0].main,
